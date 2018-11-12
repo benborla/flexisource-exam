@@ -42,12 +42,7 @@ class ListsController extends Controller
     {
         // Instantiate entity
         $list = new MailChimpList($request->all());
-        // Temporarily needs to do this, Im having problems with 'bool' type in Postman API
-        //$listArray = $list->toMailChimpArray();
-        //$listArray['email_type_option'] = settype($listArray['email_type_option'], 'boolean');
         // Validate entity
-        //$validator = $this->getValidationFactory()->make($listArray, $list->getValidationRules());
-
         $validator = $this->getValidationFactory()->make($list->toMailChimpArray(), $list->getValidationRules());
 
         if ($validator->fails()) {
@@ -62,7 +57,6 @@ class ListsController extends Controller
             // Save list into db
             $this->saveEntity($list);
             // Save list into MailChimp
-            //$response = $this->mailChimp->post('lists', $listArray);
             $response = $this->mailChimp->post('lists', $list->toMailChimpArray());
             // Set MailChimp id on the list and save list into db
             $this->saveEntity($list->setMailChimpId($response->get('id')));
