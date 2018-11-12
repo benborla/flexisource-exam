@@ -77,7 +77,7 @@ class MailChimpMember extends MailChimpEntity
     }
 
     /**
-     * Set list_id of the member.
+     * Set list id of the member.
      *
      * @param string $listId
      *
@@ -91,7 +91,7 @@ class MailChimpMember extends MailChimpEntity
     }
 
     /**
-     * Get mailchimp id of the list.
+     * Get Mailchimp id of the list.
      *
      * @return null|string
      */
@@ -101,7 +101,7 @@ class MailChimpMember extends MailChimpEntity
     }
 
     /**
-     * Set mailchimp id of the list.
+     * Set Mailchimp id of the list.
      *
      * @param string $mailChimpId
      *

@@ -104,7 +104,7 @@ class MembersController extends Controller
     }
 
     /**
-     * Retrieve MailChimp Member
+     * Retrieve MailChimp member
      *
      * @param string $listId
      *
